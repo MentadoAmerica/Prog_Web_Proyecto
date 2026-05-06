@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+body {
+    background: #f4fbf2;
+    color: #1e3a2f;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(0, 32, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2b7840, #4c9f6e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.logo i {
+    color: #2b7840;
+    margin-right: 6px;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2c5e44;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: #1c8b4e;
+}
+.btn-user {
+    background: #e9f5ec;
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    border: 1px solid #bdd8c4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+h1 {
+    font-size: 2rem;
+    color: #1c593f;
+    margin-bottom: 0.5rem;
+}
+
+/* Cards de plantas adoptadas */
+.plantas-adoptadas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.planta-card {
+    background: white;
+    border-radius: 32px;
+    padding: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+}
+.planta-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+.planta-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
+    object-fit: cover;
+}
+.info {
+    flex: 2;
+}
+.info h3 {
+    font-size: 1.4rem;
+    color: #2b6e46;
+    margin-bottom: 0.3rem;
+}
+.info p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.evidencia {
+    text-align: center;
+    min-width: 180px;
+}
+.btn-camara {
+    background: #e0f0e5;
+    border: 1px solid #2c7840;
+    color: #2c7840;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+}
+.btn-camara i {
+    margin-right: 8px;
+}
+.btn-camara:hover {
+    background: #2c7840;
+    color: white;
+}
+.evidencia small {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    color: #6f8f7a;
+}
+
+/* Ejemplo de formulario de registro */
+.ejemplo-registro {
+    background: #e2f0e6;
+    border-radius: 32px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+.ejemplo-registro h3 {
+    margin-bottom: 1rem;
+    color: #2b5d44;
+}
+.form-ejemplo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+}
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.campo label {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.campo input, .campo select {
+    padding: 0.5rem;
+    border-radius: 28px;
+    border: 1px solid #bdd8c4;
+    background: white;
+}
+.btn-guardar {
+    background: #2c7840;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-guardar i {
+    margin-right: 6px;
+}
+
+/* Historial */
+.historial {
+    margin: 2rem 0;
+}
+.historial h3 {
+    margin-bottom: 1rem;
+}
+.lista-historial {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.registro-item {
+    background: white;
+    padding: 0.8rem;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.registro-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+footer {
+    background: #dff0e6;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #2b5d44;
+    margin-top: 3rem;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .planta-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .evidencia {
+        width: 100%;
+    }
+    .form-ejemplo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

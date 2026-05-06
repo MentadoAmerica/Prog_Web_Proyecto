@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+body {
+    background: #f8fef5;
+    color: #1e3a2f;
+}
+/* Navbar fijo */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(0, 32, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2b7840, #4c9f6e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.logo i {
+    color: #2b7840;
+    margin-right: 6px;
+    background: none;
+    -webkit-background-clip: unset;
+    color: #2b7840;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2c5e44;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: #1c8b4e;
+    transform: translateY(-2px);
+}
+.btn-user {
+    background: #e9f5ec;
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    border: 1px solid #bdd8c4;
+}
+/* Carrusel */
+.hero {
+    margin-top: 0;
+}
+.carousel {
+    position: relative;
+    height: 65vh;
+    min-height: 320px;
+    overflow: hidden;
+}
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-slide.active {
+    opacity: 1;
+}
+.carousel-text {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    padding: 1.5rem 2.5rem;
+    border-radius: 32px;
+    text-align: center;
+    color: white;
+}
+.carousel-text h1 {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+}
+/* Descripción */
+.description {
+    max-width: 900px;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+.description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a5340;
+}
+/* Grid plantas destacadas */
+.featured {
+    padding: 2rem 2rem 3rem;
+    background: #ffffffd9;
+}
+.featured h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 2rem;
+}
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    transition: 0.25s;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 28px rgba(0, 0, 0, 0.1);
+}
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card h3 {
+    margin: 0.8rem 0 0.3rem;
+    color: #1a5e41;
+}
+.card p {
+    padding: 0 1rem 0.8rem;
+    font-size: 0.9rem;
+    color: #2f5e49;
+}
+.btn-adoptar {
+    background: #2c7840;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+footer {
+    background: #dff0e6;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #2b5d44;
+}
+@media (max-width: 700px) {
+    .navbar { flex-direction: column; gap: 0.7rem; }
+    .carousel-text h1 { font-size: 1.8rem; }
+}

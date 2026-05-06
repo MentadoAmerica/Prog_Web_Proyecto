@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantaTec | Cuidados</title>
+    <link rel="stylesheet" href="cuidados.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-seedling"></i> PlantaTec</div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="recomendaciones.html">Recomendaciones</a>
+            <a href="cuidados.html">Cuidados</a>
+            <a href="problematicas.html">Problemáticas</a>
+            <a href="#" class="btn-user"><i class="fas fa-user"></i> Usuario</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>🌱 Mis plantas adoptadas</h1>
+        <p>Registra el cuidado diario y sube evidencia de cada planta.</p>
+
+        <!-- Lista de plantas (cards con ícono de cámara para evidencia) -->
+        <div class="plantas-adoptadas">
+            <!-- Card Planta 1 -->
+            <div class="planta-card">
+                <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=200&h=150&fit=crop" alt="Espatifilo">
+                <div class="info">
+                    <h3>Espatifilo (Ejemplo)</h3>
+                    <p><i class="fas fa-tint"></i> Riego: 2 veces/semana</p>
+                    <p><i class="fas fa-sun"></i> Luz: Indirecta</p>
+                </div>
+                <div class="evidencia">
+                    <button class="btn-camara"><i class="fas fa-camera"></i> Subir evidencia del día</button>
+                    <small>Última evidencia: hace 2 días</small>
+                </div>
+            </div>
+            <!-- Card Planta 2 -->
+            <div class="planta-card">
+                <img src="https://images.unsplash.com/photo-1614594978485-ca3fc7f1d5a2?w=200&h=150&fit=crop" alt="Monstera">
+                <div class="info">
+                    <h3>Monstera (Ejemplo)</h3>
+                    <p><i class="fas fa-tint"></i> Riego: 1 vez/semana</p>
+                    <p><i class="fas fa-sun"></i> Luz: Indirecta brillante</p>
+                </div>
+                <div class="evidencia">
+                    <button class="btn-camara"><i class="fas fa-camera"></i> Subir evidencia del día</button>
+                    <small>Sin evidencia aún</small>
+                </div>
+            </div>
+            <!-- Card Planta 3 -->
+            <div class="planta-card">
+                <img src="https://images.unsplash.com/photo-1480094750812-3cc6a3d97c2e?w=200&h=150&fit=crop" alt="Cactus">
+                <div class="info">
+                    <h3>Cactus (Ejemplo seco)</h3>
+                    <p><i class="fas fa-tint"></i> Riego: Cada 15 días</p>
+                    <p><i class="fas fa-sun"></i> Luz: Sol directo</p>
+                </div>
+                <div class="evidencia">
+                    <button class="btn-camara"><i class="fas fa-camera"></i> Subir evidencia del día</button>
+                    <small>Evidencia subida ayer</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de ejemplo: formulario para registrar actividad con cámara -->
+        <div class="ejemplo-registro">
+            <h3><i class="fas fa-clipboard-list"></i> Registrar nueva actividad (ejemplo)</h3>
+            <div class="form-ejemplo">
+                <div class="campo">
+                    <label>Tipo de acción:</label>
+                    <select>
+                        <option>Riego</option>
+                        <option>Poda</option>
+                        <option>Abono</option>
+                        <option>Trasplante</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label>Fecha:</label>
+                    <input type="date" value="2026-05-06">
+                </div>
+                <div class="campo">
+                    <label><i class="fas fa-camera"></i> Subir imagen (evidencia):</label>
+                    <input type="file" accept="image/*">
+                </div>
+                <button class="btn-guardar"><i class="fas fa-save"></i> Guardar registro</button>
+            </div>
+        </div>
+
+        <!-- Historial de actividades (ejemplo visual) -->
+        <div class="historial">
+            <h3><i class="fas fa-history"></i> Historial de cuidados</h3>
+            <div class="lista-historial">
+                <div class="registro-item">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=60&h=60&fit=crop" alt="evidencia riego">
+                    <div><strong>Riego</strong><br>05/05/2026</div>
+                </div>
+                <div class="registro-item">
+                    <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=60&h=60&fit=crop" alt="evidencia poda">
+                    <div><strong>Poda</strong><br>02/05/2026</div>
+                </div>
+                <div class="registro-item">
+                    <i class="fas fa-leaf" style="font-size: 2rem; color: #2b7840;"></i>
+                    <div><strong>Abono</strong><br>28/04/2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>🌿 PlantaTec - Seguimiento visual de tus plantas | Boceto demostrativo</p>
+    </footer>
+</body>
+</html>

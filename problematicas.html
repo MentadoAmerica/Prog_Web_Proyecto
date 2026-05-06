@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantaTec | Problemáticas</title>
+    <link rel="stylesheet" href="problematicas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-seedling"></i> PlantaTec</div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="recomendaciones.html">Recomendaciones</a>
+            <a href="cuidados.html">Cuidados</a>
+            <a href="problematicas.html">Problemáticas</a>
+            <a href="#" class="btn-user"><i class="fas fa-user"></i> Usuario</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>⚠️ Problemas en tus plantas</h1>
+        <p>Selecciona una planta y un problema para obtener soluciones.</p>
+
+        <!-- Selector de planta (ejemplo visual) -->
+        <div class="selector-planta">
+            <label><i class="fas fa-seedling"></i> Elige tu planta:</label>
+            <select>
+                <option>Espatifilo (Ejemplo)</option>
+                <option>Monstera (Ejemplo)</option>
+                <option>Cactus (Ejemplo)</option>
+                <option>Helecho (Ejemplo)</option>
+            </select>
+        </div>
+
+        <!-- Galería de problemas (cards con imagen y botón Ver más) -->
+        <h2><i class="fas fa-bug"></i> Problemas comunes</h2>
+        <div class="grid-problemas">
+            <!-- Card 1: Plagas -->
+            <div class="problema-card">
+                <img src="https://images.unsplash.com/photo-1574943320219-553eb321feba?w=300&h=200&fit=crop" alt="Plagas">
+                <div class="card-content">
+                    <h3>Plagas</h3>
+                    <p>Ácaros, pulgones, cochinillas... Afectan hojas y tallos.</p>
+                    <button class="btn-ver-mas">Ver más <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Card 2: Hojas secas -->
+            <div class="problema-card">
+                <img src="https://images.unsplash.com/photo-1599511601065-b85aec0f8c2c?w=300&h=200&fit=crop" alt="Hojas secas">
+                <div class="card-content">
+                    <h3>Hojas secas</h3>
+                    <p>Puntas marrones, textura quebradiza. Falta de humedad o riego.</p>
+                    <button class="btn-ver-mas">Ver más <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Card 3: Hojas amarillas -->
+            <div class="problema-card">
+                <img src="https://images.unsplash.com/photo-1588845285629-df00b6b5c27c?w=300&h=200&fit=crop" alt="Hojas amarillas">
+                <div class="card-content">
+                    <h3>Hojas amarillas</h3>
+                    <p>Exceso de agua o deficiencia de nutrientes.</p>
+                    <button class="btn-ver-mas">Ver más <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Card 4: Crecimiento lento -->
+            <div class="problema-card">
+                <img src="https://images.unsplash.com/photo-1599240298437-49b1bceed699?w=300&h=200&fit=crop" alt="Crecimiento lento">
+                <div class="card-content">
+                    <h3>Crecimiento lento</h3>
+                    <p>Falta de luz, maceta pequeña o falta de abono.</p>
+                    <button class="btn-ver-mas">Ver más <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Card 5: Manchas en hojas -->
+            <div class="problema-card">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=300&h=200&fit=crop" alt="Manchas">
+                <div class="card-content">
+                    <h3>Manchas en hojas</h3>
+                    <p>Hongos o quemaduras por sol directo.</p>
+                    <button class="btn-ver-mas">Ver más <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <!-- Card 6: Raíces podridas -->
+            <div class="problema-card">
+                <img src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?w=300&h=200&fit=crop" alt="Raíces podridas">
+                <div class="card-content">
+                    <h3>Raíces podridas</h3>
+                    <p>Mal drenaje, exceso de riego. Olor desagradable.</p>
+                    <button class="btn-ver-mas">Ver más <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de detalles (al hacer clic en "Ver más" se mostraría una solución) - Ejemplo visual -->
+        <div class="detalle-solucion" id="detalleSolucion" style="display: none;">
+            <div class="solucion-card">
+                <h3><i class="fas fa-lightbulb"></i> Solución recomendada</h3>
+                <p>Aquí se mostraría la solución específica según la planta elegida y el problema seleccionado. (Datos de ejemplo)</p>
+                <button class="btn-cerrar">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>🌿 PlantaTec - Diagnóstico y soluciones para tus plantas | Boceto visual</p>
+    </footer>
+
+    <script>
+        // Pequeño script para mostrar/ocultar el detalle de solución (ejemplo visual)
+        const verMasBtns = document.querySelectorAll('.btn-ver-mas');
+        const detalleDiv = document.getElementById('detalleSolucion');
+        const cerrarBtn = document.querySelector('.btn-cerrar');
+
+        verMasBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                detalleDiv.style.display = 'block';
+                // Simular cambio de texto según el problema (solo ejemplo)
+                const card = btn.closest('.problema-card');
+                const problemaNombre = card.querySelector('h3').innerText;
+                const solucionTexto = document.querySelector('#detalleSolucion p');
+                if (problemaNombre === 'Plagas') {
+                    solucionTexto.innerHTML = '🔍 <strong>Solución para Plagas:</strong> Aplica jabón potásico o aceite de neem cada 3 días. Aísla la planta para evitar propagación.';
+                } else if (problemaNombre === 'Hojas secas') {
+                    solucionTexto.innerHTML = '💧 <strong>Solución para Hojas secas:</strong> Aumenta la frecuencia de riego y pulveriza agua sobre las hojas. Coloca un humidificador cerca.';
+                } else if (problemaNombre === 'Hojas amarillas') {
+                    solucionTexto.innerHTML = '🌱 <strong>Solución para Hojas amarillas:</strong> Revisa el drenaje, reduce el riego y aplica fertilizante líquido cada 15 días.';
+                } else {
+                    solucionTexto.innerHTML = '🌿 <strong>Solución general:</strong> Revisa las condiciones de luz, riego y nutrientes. Consulta con un especialista si el problema persiste.';
+                }
+            });
+        });
+
+        if (cerrarBtn) {
+            cerrarBtn.addEventListener('click', () => {
+                detalleDiv.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
