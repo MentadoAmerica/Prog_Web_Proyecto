@@ -1,216 +1,463 @@
+/* ============================================
+   PlantaTec - Problemáticas | Estilo renovado
+   Imágenes grandes, bordes suaves, iconos bonitos
+   Paleta: verdes profundos + toques ámbar
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
-}
-body {
-    background: #fefaf0;
-    color: #2d3e2b;
 }
 
-/* Navbar idéntica a las demás */
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #eff5ea 0%, #f8f9f0 100%);
+    color: #1e3326;
+    line-height: 1.5;
+}
+
+/* ========== NAVBAR (estilo consistente pero refinado) ========== */
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 12px rgba(0, 32, 0, 0.08);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0, 32, 0, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.9rem 2.5rem;
     z-index: 1000;
     flex-wrap: wrap;
+    border-bottom: 1px solid rgba(60, 110, 70, 0.2);
 }
+
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #2b7840, #4c9f6e);
+    background: linear-gradient(135deg, #2b6e46, #4c9f6e);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
 .logo i {
-    color: #2b7840;
-    margin-right: 6px;
+    color: #2b6e46;
+    font-size: 2rem;
 }
+
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .nav-links a {
     text-decoration: none;
     font-weight: 600;
     color: #2c5e44;
-    transition: 0.2s;
-}
-.nav-links a:hover {
-    color: #1c8b4e;
-}
-.btn-user {
-    background: #e9f5ec;
-    padding: 0.4rem 1rem;
-    border-radius: 40px;
-    border: 1px solid #bdd8c4;
+    transition: 0.25s;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
 }
 
-/* Contenedor principal */
+.nav-links a:hover {
+    color: #2b7840;
+    border-bottom-color: #2b7840;
+}
+
+.btn-user {
+    background: #e2f0e6;
+    padding: 0.5rem 1.4rem;
+    border-radius: 60px;
+    border: 1px solid rgba(43, 120, 64, 0.3);
+    transition: 0.25s;
+}
+
+.btn-user:hover {
+    background: #2b7840;
+    color: white !important;
+    border-color: #2b7840;
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
 .container {
     max-width: 1300px;
     margin: 2rem auto;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
 }
+
 h1 {
-    font-size: 2.2rem;
-    color: #966c2c;
+    font-size: 2.6rem;
+    font-weight: 800;
+    background: linear-gradient(125deg, #2b6e46, #c47a2e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
 }
+
+.container > p {
+    font-size: 1.2rem;
+    color: #5a6e52;
+    margin-bottom: 2rem;
+    border-left: 5px solid #c4a267;
+    padding-left: 1.2rem;
+    font-weight: 500;
+}
+
+/* ========== SELECTOR DE PLANTA (más bonito) ========== */
 .selector-planta {
-    background: #f3ecdc;
-    padding: 1rem 1.5rem;
-    border-radius: 60px;
-    margin: 1.5rem 0;
+    background: rgba(255, 252, 240, 0.85);
+    backdrop-filter: blur(4px);
+    padding: 1.2rem 2rem;
+    border-radius: 80px;
+    margin: 2rem 0 2.5rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.8rem;
     flex-wrap: wrap;
-}
-.selector-planta label {
-    font-weight: bold;
-    color: #5e3a1c;
-}
-.selector-planta select {
-    padding: 0.5rem 1rem;
-    border-radius: 40px;
-    border: 1px solid #cdba8f;
-    background: white;
-    font-size: 0.9rem;
-}
-h2 {
-    font-size: 1.8rem;
-    margin: 1.5rem 0 1rem;
-    color: #7e582a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2d5b6;
 }
 
-/* Grid de problemas */
+.selector-planta label {
+    font-weight: 800;
+    color: #5a4322;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selector-planta label i {
+    color: #2b7840;
+    font-size: 1.3rem;
+}
+
+.selector-planta select {
+    padding: 0.75rem 2rem 0.75rem 1.2rem;
+    border-radius: 60px;
+    border: 1.5px solid #dacdab;
+    background: white;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%235a4322' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    transition: all 0.2s;
+}
+
+.selector-planta select:focus {
+    outline: none;
+    border-color: #c4a267;
+    box-shadow: 0 0 0 4px rgba(196, 162, 103, 0.2);
+}
+
+/* ========== TÍTULO DE PROBLEMAS ========== */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0 2rem;
+    color: #3b6e46;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+h2 i {
+    background: #e2f0e6;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #c47a2e;
+}
+
+/* ========== GRID DE PROBLEMAS - IMÁGENES GRANDES Y DESTACADAS ========== */
 .grid-problemas {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-.problema-card {
-    background: white;
-    border-radius: 32px;
-    overflow: hidden;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
-    transition: 0.25s;
-}
-.problema-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 28px rgba(0, 0, 0, 0.1);
-}
-.problema-card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-}
-.card-content {
-    padding: 1.2rem;
-}
-.card-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: #2b6e46;
-}
-.card-content p {
-    color: #4a5b44;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-.btn-ver-mas {
-    background: #e0d5b7;
-    border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-    color: #5b3a1a;
-}
-.btn-ver-mas i {
-    margin-left: 6px;
-}
-.btn-ver-mas:hover {
-    background: #c9b87a;
-    color: white;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2.2rem;
+    margin-bottom: 3rem;
 }
 
-/* Detalle de solución (emergente visual) */
+.problema-card {
+    background: white;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    border: 1px solid rgba(90, 67, 34, 0.1);
+    cursor: pointer;
+}
+
+.problema-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 45px rgba(0, 0, 0, 0.12);
+    border-color: #c4a267;
+}
+
+/* IMAGEN GRANDE (ocupa casi la mitad de la card) */
+.problema-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.problema-card:hover img {
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 1.8rem;
+}
+
+.card-content h3 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 0.7rem;
+    color: #2b6e46;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-content h3::before {
+    content: "🌿";
+    font-size: 1.6rem;
+}
+
+.card-content p {
+    color: #5f5a4b;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-ver-mas {
+    background: #f1ebdb;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 60px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+    color: #5a4322;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+}
+
+.btn-ver-mas i {
+    transition: transform 0.2s;
+}
+
+.btn-ver-mas:hover {
+    background: #c4a267;
+    color: white;
+    transform: scale(0.96);
+}
+
+.btn-ver-mas:hover i {
+    transform: translateX(5px);
+}
+
+/* ========== MODAL DE SOLUCIÓN (elegante y suave) ========== */
 .detalle-solucion {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2000;
 }
+
 .solucion-card {
     background: white;
-    max-width: 500px;
+    max-width: 560px;
     width: 90%;
-    border-radius: 48px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.2s ease;
+    border-radius: 60px;
+    padding: 2rem 2rem 2rem;
+    text-align: left;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
+    animation: modalEntrada 0.35s ease;
+    border: 1px solid #e2d5b6;
 }
+
 .solucion-card h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 800;
     color: #2b7840;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
+
+.solucion-card h3 i {
+    background: #e2f0e6;
+    padding: 12px;
+    border-radius: 60%;
+    font-size: 1.4rem;
+    color: #c47a2e;
+}
+
 .solucion-card p {
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    color: #2d442b;
+    background: #fefaf0;
+    padding: 1.2rem;
+    border-radius: 40px;
+    font-weight: 500;
 }
+
 .btn-cerrar {
-    background: #b87a2c;
+    background: #c47a2e;
     color: white;
     border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 40px;
-    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border-radius: 60px;
+    font-weight: 700;
     cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95);}
-    to { opacity: 1; transform: scale(1);}
+.btn-cerrar:hover {
+    background: #9b5e24;
+    transform: scale(0.96);
 }
 
+@keyframes modalEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ========== FOOTER ========== */
 footer {
-    background: #e4dcc8;
+    background: #dce8cf;
     text-align: center;
     padding: 2rem;
-    font-size: 0.9rem;
-    color: #5c4325;
-    margin-top: 2rem;
+    font-size: 1rem;
+    color: #5a4322;
+    margin-top: 4rem;
+    border-top: 1px solid #c8d8b5;
+    font-weight: 500;
 }
 
-@media (max-width: 700px) {
+/* ========== RESPONSIVE: en móvil las imágenes siguen siendo grandes ========== */
+@media (max-width: 850px) {
     .navbar {
+        padding: 0.8rem 1.5rem;
         flex-direction: column;
-        gap: 0.7rem;
+        gap: 0.8rem;
     }
-    .selector-planta {
+    
+    .nav-links {
+        gap: 1.2rem;
         justify-content: center;
     }
+    
+    .container {
+        padding: 0 1.2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .selector-planta {
+        justify-content: center;
+        border-radius: 50px;
+        padding: 1rem;
+    }
+    
+    .grid-problemas {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    
+    .problema-card img {
+        height: 230px;
+    }
+    
+    .card-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .solucion-card {
+        padding: 1.5rem;
+        border-radius: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .problema-card img {
+        height: 200px;
+    }
+}
+
+/* ========== ANIMACIONES DE ENTRADA ========== */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.problema-card {
+    animation: fadeSlideUp 0.5s ease-out backwards;
+}
+
+.problema-card:nth-child(1) { animation-delay: 0.05s; }
+.problema-card:nth-child(2) { animation-delay: 0.1s; }
+.problema-card:nth-child(3) { animation-delay: 0.15s; }
+.problema-card:nth-child(4) { animation-delay: 0.2s; }
+.problema-card:nth-child(5) { animation-delay: 0.25s; }
+.problema-card:nth-child(6) { animation-delay: 0.3s; }
+
+/* ========== DETALLES EXTRA ========== */
+.btn-ver-mas, .btn-cerrar {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hace que el selector de planta se vea más moderno */
+.selector-planta select:hover {
+    border-color: #c4a267;
 }

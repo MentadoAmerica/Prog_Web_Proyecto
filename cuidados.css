@@ -1,240 +1,608 @@
+/* ============================================
+   PlantaTec - Estilo renovado (imagenes grandes + diseño lindo)
+   Versión con cards destacadas, iconos bonitos y bordes refinados
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap');
+
+:root {
+    --verde-profundo: #1e3a2f;
+    --verde-medio: #2b7840;
+    --verde-suave: #4c9f6e;
+    --verde-claro: #e2f0e6;
+    --verde-muy-claro: #f4fbf2;
+    --gris-verde: #6f8f7a;
+    --blanco: #ffffff;
+    --crema: #fef9e8;
+    --sombra-suave: 0 12px 28px rgba(0, 32, 0, 0.08);
+    --sombra-elevada: 0 20px 35px rgba(0, 0, 0, 0.12);
+    --border-radius-card: 36px;
+    --border-radius-elemento: 32px;
+    --transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
-}
-body {
-    background: #f4fbf2;
-    color: #1e3a2f;
 }
 
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, var(--verde-muy-claro) 0%, #eef5ea 100%);
+    color: var(--verde-profundo);
+    line-height: 1.5;
+}
+
+/* ===== Navegación ===== */
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 12px rgba(0, 32, 0, 0.08);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0, 32, 0, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.9rem 2.5rem;
     z-index: 1000;
     flex-wrap: wrap;
+    border-bottom: 1px solid rgba(75, 130, 90, 0.2);
 }
+
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #2b7840, #4c9f6e);
+    background: linear-gradient(135deg, var(--verde-medio), #5cb573);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
 .logo i {
-    color: #2b7840;
-    margin-right: 6px;
+    background: none;
+    color: var(--verde-medio);
+    font-size: 2rem;
 }
+
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .nav-links a {
     text-decoration: none;
     font-weight: 600;
     color: #2c5e44;
-    transition: 0.2s;
+    transition: var(--transition);
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
 }
+
 .nav-links a:hover {
-    color: #1c8b4e;
+    color: var(--verde-medio);
+    border-bottom-color: var(--verde-medio);
 }
+
 .btn-user {
-    background: #e9f5ec;
-    padding: 0.4rem 1rem;
-    border-radius: 40px;
-    border: 1px solid #bdd8c4;
+    background: var(--verde-claro);
+    padding: 0.5rem 1.4rem;
+    border-radius: 60px;
+    border: 1px solid rgba(43, 120, 64, 0.3);
+    transition: var(--transition);
 }
 
+.btn-user:hover {
+    background: var(--verde-medio);
+    color: white !important;
+    border-color: var(--verde-medio);
+}
+
+/* ===== Contenedor principal ===== */
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 2rem auto;
-    padding: 0 1.5rem;
-}
-h1 {
-    font-size: 2rem;
-    color: #1c593f;
-    margin-bottom: 0.5rem;
+    padding: 0 2rem;
 }
 
-/* Cards de plantas adoptadas */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(125deg, #1c593f, var(--verde-medio));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.container > p {
+    font-size: 1.15rem;
+    color: var(--gris-verde);
+    margin-bottom: 2.5rem;
+    border-left: 5px solid var(--verde-suave);
+    padding-left: 1.2rem;
+    font-weight: 400;
+}
+
+/* ===== Tarjetas de plantas - IMAGEN GRANDE ===== */
 .plantas-adoptadas {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem 0;
+    gap: 2rem;
+    margin: 2rem 0 3rem;
 }
+
 .planta-card {
-    background: white;
-    border-radius: 32px;
-    padding: 1.2rem;
+    background: var(--blanco);
+    border-radius: var(--border-radius-card);
+    padding: 1.8rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1.5rem;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-    transition: 0.2s;
+    gap: 2rem;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transition);
+    border: 1px solid rgba(100, 140, 110, 0.2);
+    position: relative;
+    backdrop-filter: blur(2px);
 }
+
+/* Efecto decorativo en borde izquierdo */
+.planta-card::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, rgba(75, 130, 90, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .planta-card:hover {
-    transform: translateX(4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-elevada);
+    border-color: rgba(75, 130, 90, 0.4);
 }
+
+/* IMAGEN MÁS GRANDE */
 .planta-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 28px;
+    width: 180px;
+    height: 180px;
+    border-radius: 32px;
     object-fit: cover;
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+    transition: var(--transition);
+    border: 3px solid white;
+    outline: 1px solid #cde0d4;
+    flex-shrink: 0;
 }
+
+.planta-card:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 18px 28px rgba(0, 0, 0, 0.15);
+}
+
 .info {
     flex: 2;
+    z-index: 1;
 }
+
 .info h3 {
-    font-size: 1.4rem;
-    color: #2b6e46;
-    margin-bottom: 0.3rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--verde-profundo);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+.info h3::before {
+    content: "🌿";
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
 .info p {
-    margin: 0.2rem 0;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--verde-muy-claro);
+    padding: 0.4rem 1rem;
+    border-radius: 60px;
+    width: fit-content;
+    font-weight: 500;
+}
+
+.info p i {
+    color: var(--verde-medio);
+    font-size: 1.15rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.evidencia {
+    text-align: center;
+    min-width: 210px;
+    background: linear-gradient(135deg, #fafdf8, #f5faf2);
+    padding: 1.2rem;
+    border-radius: 32px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8), 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.btn-camara {
+    background: var(--blanco);
+    border: 1.5px solid var(--verde-medio);
+    color: var(--verde-medio);
+    padding: 0.8rem 1.2rem;
+    border-radius: 60px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-camara i {
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.btn-camara:hover {
+    background: var(--verde-medio);
+    color: white;
+    transform: scale(0.97);
+    box-shadow: 0 6px 14px rgba(43, 120, 64, 0.3);
+}
+
+.btn-camara:hover i {
+    transform: translateY(-2px);
+}
+
+.evidencia small {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--gris-verde);
+    background: #edf4ea;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+}
+
+/* ===== Formulario de registro (bonito) ===== */
+.ejemplo-registro {
+    background: var(--blanco);
+    border-radius: var(--border-radius-elemento);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(75, 130, 90, 0.25);
+    transition: var(--transition);
+}
+
+.ejemplo-registro:hover {
+    box-shadow: var(--sombra-elevada);
+}
+
+.ejemplo-registro h3 {
+    margin-bottom: 1.5rem;
+    color: var(--verde-medio);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+}
+
+.ejemplo-registro h3 i {
+    background: var(--verde-claro);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--verde-medio);
+}
+
+.form-ejemplo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+    min-width: 170px;
+}
+
+.campo label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--verde-profundo);
+    letter-spacing: -0.2px;
     display: flex;
     align-items: center;
     gap: 6px;
 }
-.evidencia {
-    text-align: center;
-    min-width: 180px;
-}
-.btn-camara {
-    background: #e0f0e5;
-    border: 1px solid #2c7840;
-    color: #2c7840;
-    padding: 0.5rem 1rem;
-    border-radius: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-    width: 100%;
-}
-.btn-camara i {
-    margin-right: 8px;
-}
-.btn-camara:hover {
-    background: #2c7840;
-    color: white;
-}
-.evidencia small {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.7rem;
-    color: #6f8f7a;
+
+.campo label i {
+    color: var(--verde-medio);
+    font-size: 0.9rem;
 }
 
-/* Ejemplo de formulario de registro */
-.ejemplo-registro {
-    background: #e2f0e6;
+.campo input,
+.campo select {
+    padding: 0.8rem 1rem;
     border-radius: 32px;
-    padding: 1.5rem;
-    margin: 2rem 0;
+    border: 1.5px solid #d4e2d0;
+    background: var(--blanco);
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
-.ejemplo-registro h3 {
-    margin-bottom: 1rem;
-    color: #2b5d44;
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: var(--verde-medio);
+    box-shadow: 0 0 0 4px rgba(43, 120, 64, 0.15);
 }
-.form-ejemplo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: flex-end;
-}
-.campo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-.campo label {
-    font-weight: 600;
-    font-size: 0.85rem;
-}
-.campo input, .campo select {
-    padding: 0.5rem;
-    border-radius: 28px;
-    border: 1px solid #bdd8c4;
-    background: white;
-}
+
 .btn-guardar {
-    background: #2c7840;
+    background: linear-gradient(105deg, var(--verde-medio), #3e8a5a);
     color: white;
     border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 40px;
-    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border-radius: 60px;
+    font-weight: 700;
     cursor: pointer;
-}
-.btn-guardar i {
-    margin-right: 6px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Historial */
+.btn-guardar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(43, 120, 64, 0.3);
+    background: linear-gradient(105deg, #236a3b, #2b7840);
+}
+
+/* ===== Historial mejorado con iconos lindos ===== */
 .historial {
-    margin: 2rem 0;
+    margin: 2.5rem 0 1rem;
 }
+
 .historial h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--verde-profundo);
+    font-weight: 800;
 }
+
+.historial h3 i {
+    background: var(--verde-claro);
+    padding: 10px;
+    border-radius: 60%;
+    font-size: 1.2rem;
+}
+
 .lista-historial {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.2rem;
 }
+
 .registro-item {
-    background: white;
-    padding: 0.8rem;
-    border-radius: 28px;
+    background: var(--blanco);
+    padding: 1.2rem 1.8rem;
+    border-radius: 32px;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.registro-item img {
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-    object-fit: cover;
+    gap: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+    border: 1px solid #e2ecd9;
 }
 
+.registro-item:hover {
+    transform: translateX(10px);
+    border-left: 6px solid var(--verde-medio);
+    background: #fefffd;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.registro-item img {
+    width: 64px;
+    height: 64px;
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid white;
+}
+
+.registro-item i.fa-leaf {
+    font-size: 2.5rem;
+    color: var(--verde-medio);
+    background: var(--verde-claro);
+    padding: 0.7rem;
+    border-radius: 24px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registro-item div strong {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--verde-profundo);
+}
+
+.registro-item div {
+    font-size: 0.85rem;
+    color: var(--gris-verde);
+}
+
+/* ===== Footer ===== */
 footer {
-    background: #dff0e6;
+    background: var(--verde-claro);
     text-align: center;
     padding: 2rem;
-    font-size: 0.9rem;
-    color: #2b5d44;
-    margin-top: 3rem;
+    font-size: 0.95rem;
+    color: var(--verde-profundo);
+    margin-top: 4rem;
+    border-top: 1px solid rgba(55, 90, 55, 0.15);
+    backdrop-filter: blur(4px);
+    font-weight: 500;
 }
 
-@media (max-width: 700px) {
+/* ===== Responsive: en móvil la imagen sigue siendo grande pero se adapta ===== */
+@media (max-width: 850px) {
     .navbar {
+        padding: 0.8rem 1.5rem;
         flex-direction: column;
-        gap: 0.7rem;
+        gap: 0.8rem;
     }
+    
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+    }
+    
+    .container {
+        padding: 0 1.2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
     .planta-card {
         flex-direction: column;
         text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
     }
+    
+    /* Imagen sigue siendo grande, pero se adapta al ancho */
+    .planta-card img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .info {
+        text-align: center;
+    }
+    
+    .info p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .info h3::before {
+        display: none;
+    }
+    
     .evidencia {
         width: 100%;
     }
+    
     .form-ejemplo {
         flex-direction: column;
         align-items: stretch;
     }
+    
+    .campo {
+        width: 100%;
+    }
+    
+    .btn-guardar {
+        justify-content: center;
+    }
+    
+    .registro-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.2rem;
+    }
+    
+    .registro-item:hover {
+        transform: translateX(0);
+        border-left: 6px solid var(--verde-medio);
+    }
 }
+
+@media (max-width: 480px) {
+    .planta-card img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .info h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== Detalles extra: botones más suaves, íconos animados ===== */
+.btn-camara i, .btn-guardar i {
+    transition: transform 0.2s;
+}
+
+.btn-camara:hover i, .btn-guardar:hover i {
+    transform: translateY(-2px);
+}
+
+/* Mejora de accesibilidad visual */
+.planta-card, .ejemplo-registro, .registro-item {
+    transition: all 0.25s ease-out;
+}
+
+/* Animación suave al cargar */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.planta-card, .ejemplo-registro, .historial {
+    animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) backwards;
+}
+
+.planta-card:nth-child(1) { animation-delay: 0.05s; }
+.planta-card:nth-child(2) { animation-delay: 0.1s; }
+.planta-card:nth-child(3) { animation-delay: 0.15s; }

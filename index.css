@@ -1,74 +1,108 @@
+/* ============================================
+   PlantaTec - Inicio | Estilo renovado
+   Carrusel impactante, cards con imágenes grandes
+   Paleta verde + toques suaves, bordes redondeados
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
+
 body {
-    background: #f8fef5;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #f4fbf2 0%, #ecf6e8 100%);
     color: #1e3a2f;
+    line-height: 1.5;
 }
-/* Navbar fijo */
+
+/* ========== NAVBAR (coherente con las otras páginas) ========== */
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 12px rgba(0, 32, 0, 0.08);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0, 32, 0, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.9rem 2.5rem;
     z-index: 1000;
     flex-wrap: wrap;
+    border-bottom: 1px solid rgba(75, 130, 90, 0.2);
 }
+
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #2b7840, #4c9f6e);
+    background: linear-gradient(135deg, #2b7840, #5cb573);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
 .logo i {
-    color: #2b7840;
-    margin-right: 6px;
     background: none;
-    -webkit-background-clip: unset;
     color: #2b7840;
+    font-size: 2rem;
 }
+
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .nav-links a {
     text-decoration: none;
     font-weight: 600;
     color: #2c5e44;
-    transition: 0.2s;
+    transition: all 0.25s ease;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
 }
+
 .nav-links a:hover {
-    color: #1c8b4e;
-    transform: translateY(-2px);
+    color: #2b7840;
+    border-bottom-color: #2b7840;
+    transform: translateY(-1px);
 }
+
 .btn-user {
-    background: #e9f5ec;
-    padding: 0.4rem 1rem;
-    border-radius: 40px;
-    border: 1px solid #bdd8c4;
+    background: #e2f0e6;
+    padding: 0.5rem 1.4rem;
+    border-radius: 60px;
+    border: 1px solid rgba(43, 120, 64, 0.3);
+    transition: all 0.25s ease;
 }
-/* Carrusel */
+
+.btn-user:hover {
+    background: #2b7840;
+    color: white !important;
+    border-color: #2b7840;
+}
+
+/* ========== HERO - CARRUSEL MEJORADO ========== */
 .hero {
     margin-top: 0;
 }
+
 .carousel {
     position: relative;
-    height: 65vh;
-    min-height: 320px;
+    height: 70vh;
+    min-height: 450px;
     overflow: hidden;
+    border-radius: 0 0 48px 48px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
+
 .carousel-slide {
     position: absolute;
     width: 100%;
@@ -76,100 +110,312 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .carousel-slide.active {
     opacity: 1;
 }
+
 .carousel-text {
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(6px);
-    padding: 1.5rem 2.5rem;
-    border-radius: 32px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    padding: 2rem 3rem;
+    border-radius: 56px;
     text-align: center;
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 0.8s ease-out;
 }
+
 .carousel-text h1 {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
+    font-weight: 800;
     letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-/* Descripción */
+
+.carousel-text p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0.95;
+}
+
+/* ========== DESCRIPCIÓN ========== */
 .description {
-    max-width: 900px;
+    max-width: 950px;
     margin: 3rem auto;
     text-align: center;
     padding: 0 1.5rem;
 }
+
 .description h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2b6e46;
     margin-bottom: 1rem;
-    color: #1a5340;
+    display: inline-block;
+    border-bottom: 4px solid #c4a267;
+    padding-bottom: 0.3rem;
 }
-/* Grid plantas destacadas */
+
+.description p {
+    font-size: 1.2rem;
+    color: #3a5a48;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 1rem auto 0;
+}
+
+/* ========== SECCIÓN DESTACADA ========== */
 .featured {
-    padding: 3rem 2rem 3rem;
-    background: #ffffffd9;
+    padding: 3rem 2rem 4rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(2px);
+    border-radius: 48px 48px 0 0;
+    margin-top: 1rem;
 }
+
 .featured h2 {
     text-align: center;
-    font-size: 1.9rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2b6e46;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
+
+.featured h2::before {
+    content: "🌱";
+    font-size: 2rem;
+}
+
+/* ========== GRID DE CARDS - IMÁGENES GRANDES ========== */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
 }
+
 .card {
     background: white;
-    border-radius: 28px;
+    border-radius: 40px;
     overflow: hidden;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
-    transition: 0.25s;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     text-align: center;
     padding-bottom: 1rem;
+    border: 1px solid rgba(90, 67, 34, 0.08);
 }
+
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 28px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 28px 40px rgba(0, 0, 0, 0.12);
+    border-color: #c4a267;
 }
+
+/* IMAGEN MÁS GRANDE Y DESTACADA */
 .card img {
     width: 100%;
-    height: 180px;
+    height: 220px;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
+
+.card:hover img {
+    transform: scale(1.02);
+}
+
 .card h3 {
-    margin: 0.8rem 0 0.3rem;
-    color: #1a5e41;
+    margin: 1.2rem 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2b6e46;
 }
+
 .card p {
-    padding: 0 1rem 0.8rem;
-    font-size: 0.9rem;
-    color: #2f5e49;
+    padding: 0 1.2rem 1rem;
+    font-size: 0.95rem;
+    color: #5f5a4b;
+    line-height: 1.4;
 }
+
 .btn-adoptar {
-    background: #2c7840;
+    background: #2b7840;
     color: white;
     border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 40px;
-    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 0.9rem;
     cursor: pointer;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
 }
+
+.btn-adoptar i {
+    font-size: 1rem;
+}
+
+.btn-adoptar:hover {
+    background: #1e5e38;
+    transform: scale(0.96);
+    box-shadow: 0 6px 14px rgba(43, 120, 64, 0.3);
+}
+
+/* ========== FOOTER ========== */
 footer {
-    background: #dff0e6;
+    background: #dce8cf;
     text-align: center;
     padding: 2rem;
-    font-size: 0.9rem;
-    color: #2b5d44;
+    font-size: 0.95rem;
+    color: #5a4322;
+    margin-top: 2rem;
+    border-top: 1px solid #c8d8b5;
+    font-weight: 500;
 }
-@media (max-width: 700px) {
-    .navbar { flex-direction: column; gap: 0.7rem; }
-    .carousel-text h1 { font-size: 1.8rem; }
+
+footer p:first-child {
+    margin-bottom: 0.5rem;
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación para las cards al cargar */
+@keyframes slideUpCard {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: slideUpCard 0.5s ease-out backwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+.card:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6) { animation-delay: 0.3s; }
+
+/* ========== RESPONSIVE (imágenes siempre grandes) ========== */
+@media (max-width: 850px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+    }
+    
+    .carousel {
+        height: 55vh;
+        min-height: 350px;
+        border-radius: 0 0 32px 32px;
+    }
+    
+    .carousel-text {
+        padding: 1.2rem 2rem;
+        border-radius: 40px;
+    }
+    
+    .carousel-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .carousel-text p {
+        font-size: 1rem;
+    }
+    
+    .description h2 {
+        font-size: 1.8rem;
+    }
+    
+    .description p {
+        font-size: 1rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .card img {
+        height: 190px;
+    }
+    
+    .card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .carousel {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .carousel-text {
+        padding: 1rem 1.5rem;
+        width: 85%;
+    }
+    
+    .carousel-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card img {
+        height: 170px;
+    }
+    
+    .featured {
+        padding: 2rem 1rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== DETALLES EXTRA ========== */
+.btn-adoptar, .btn-user, .nav-links a {
+    cursor: pointer;
+}
+
+/* Mejora de accesibilidad y enfoque */
+.btn-adoptar:focus, .btn-user:focus, .nav-links a:focus {
+    outline: 2px solid #c4a267;
+    outline-offset: 2px;
 }
