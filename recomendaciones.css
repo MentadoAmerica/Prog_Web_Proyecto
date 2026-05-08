@@ -88,12 +88,22 @@ h1 {
     font-size: 0.9rem;
 }
 
-/* Galería de plantas */
 .grid-plantas {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);   /* ← Esto fuerza 3 columnas */
     gap: 2rem;
     margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .grid-plantas {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columnas en tablets */
+    }
+}
+@media (max-width: 480px) {
+    .grid-plantas {
+        grid-template-columns: 1fr;  /* 1 columna en móviles */
+    }
 }
 .card {
     background: white;
